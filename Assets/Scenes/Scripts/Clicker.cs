@@ -14,12 +14,15 @@ public class Clicker : MonoBehaviour
     void Update()
     {
         if (Input.GetMouseButtonDown(0) && myRenderer.enabled == true) // if we klick the mouse and the car renderer is enabled on (true) the renferer to off (false).
-        {
-            myRenderer.enabled = false;// disables renderer of object
+        {                                             
+            myRenderer.enabled = false;// disables renderer of object                        
         }
         else if (Input.GetMouseButtonDown(0) && myRenderer.enabled == false) // if we klick the mouse and the car renderer is enabled off (false) the renferer to on (true).
         {
             myRenderer.enabled = true;// enables renderer of object
         }
     }
+
+    
+
 }

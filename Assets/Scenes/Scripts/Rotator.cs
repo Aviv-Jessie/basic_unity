@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class Rotator : MonoBehaviour
 {
-    // Update is called once per frame
-    float smooth = 5.0f;
-    private float count = 0;
+    [SerializeField]
+    float speed = 0.5f;
+    private float smooth = 5.0f;
+    private float tiltAroundZ = 0;
+    
     void Update()
-    {
+    {   
+        //Change z axis.
+        tiltAroundZ += speed;
         
-        float tiltAroundZ = count;
-        count++;
-
-        
+        //convert vector3 to Quaternion.
         Quaternion target = Quaternion.Euler(0, 0, tiltAroundZ);
 
-        
+        //Slerp from current rotation to new rotation.
         transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * smooth);
     }
 }
